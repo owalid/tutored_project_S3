@@ -7,7 +7,7 @@ Insert into PRODUIT (LIBELLEPRODUIT) values ('Lait');
 
 
 
-/*Modifier un produit (ici le numero 1)*/
+/*Modifier un produit (ici le numero 2)*/
 UPDATE PRODUIT
 SET libeleProduit = 'nouvelle valeur'
 WHERE id_produit = 2;
@@ -15,7 +15,7 @@ WHERE id_produit = 2;
 
 
 
-/*Supprimer un produit (ici le numero 1)*/
+/*Supprimer un produit (ici le numero 2)*/
 DELETE FROM PRODUIT
 WHERE id_produit = 2;
 
