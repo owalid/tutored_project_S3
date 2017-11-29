@@ -5,7 +5,7 @@
 --  DDL for View VUECALCULM
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE EDITIONABLE VIEW "YWANG8"."VUECALCULM" ("ID_ENFANT", "NOMPERSONNE", "PRENOMPERSONNE", "MONTANT") AS 
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "VUECALCULM" ("ID_ENFANT", "NOMPERSONNE", "PRENOMPERSONNE", "MONTANT") AS 
   SELECT 
     enfant.id_enfant,personne.nompersonne,personne.prenompersonne,sum(montantargent) as montant
 FROM 
@@ -20,7 +20,7 @@ FROM
 --  DDL for View VUEPRODUIT
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE EDITIONABLE VIEW "YWANG8"."VUEPRODUIT" ("ID_PRODUIT", "PRIX") AS 
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "VUEPRODUIT" ("ID_PRODUIT", "PRIX") AS 
   (SELECT 
     produit.id_produit,prixunitaire as prix
 FROM 
@@ -46,7 +46,7 @@ union
 --  DDL for View VUEPRIXTOTAL
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE EDITIONABLE VIEW "YWANG8"."VUEPRIXTOTAL" ("ID_ENFANT", "PRENOMPERSONNE", "NOMPERSONNE", "TOTAL") AS 
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "VUEPRIXTOTAL" ("ID_ENFANT", "PRENOMPERSONNE", "NOMPERSONNE", "TOTAL") AS 
   SELECT 
     enfant.id_enfant,personne.prenompersonne,personne.nompersonne, sum(prix * qteconsommation) as total
 FROM 
@@ -60,10 +60,10 @@ FROM
     group by  enfant.id_enfant,personne.prenompersonne,personne.nompersonne
 ;
 --------------------------------------------------------
---  DDL for View VUESOLD
+--  DDL for View VUESOLDE
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE EDITIONABLE VIEW "YWANG8"."VUESOLD" ("ID_ENFANT", "PRENOMPERSONNE", "NOMPERSONNE", "SOLDE") AS 
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "VUESOLDE" ("ID_ENFANT", "PRENOMPERSONNE", "NOMPERSONNE", "SOLDE") AS 
   (SELECT 
     vueprixtotal.id_enfant,vueprixtotal.prenompersonne,vueprixtotal.nompersonne,montant-total as solde
     
@@ -75,41 +75,3 @@ FROM
 union
 (select "ID_ENFANT","NOMPERSONNE","PRENOMPERSONNE","MONTANT" from vuecalculm where id_enfant not in(select id_enfant from vueprixtotal))
 ;
-REM INSERTING into YWANG8.VUECALCULM
-SET DEFINE OFF;
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (6,'Boisclair','Enzo',30);
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (8,'Bouvier','Lucien',30);
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (10,'Granville','Hugo',30);
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (5,'Gamelin','Matheo',30);
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (7,'Richer','Alex',30);
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (2,'Pique','Antoine',60);
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (4,'Lapierre','Lucas',30);
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (1,'Martin','Maxime',60);
-Insert into YWANG8.VUECALCULM (ID_ENFANT,NOMPERSONNE,PRENOMPERSONNE,MONTANT) values (3,'Bonami','Quentin',30);
-REM INSERTING into YWANG8.VUEPRODUIT
-SET DEFINE OFF;
-Insert into YWANG8.VUEPRODUIT (ID_PRODUIT,PRIX) values (6,6);
-Insert into YWANG8.VUEPRODUIT (ID_PRODUIT,PRIX) values (7,2);
-Insert into YWANG8.VUEPRODUIT (ID_PRODUIT,PRIX) values (8,4);
-REM INSERTING into YWANG8.VUEPRIXTOTAL
-SET DEFINE OFF;
-Insert into YWANG8.VUEPRIXTOTAL (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,TOTAL) values (4,'Lucas','Lapierre',12);
-Insert into YWANG8.VUEPRIXTOTAL (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,TOTAL) values (5,'Matheo','Gamelin',6);
-Insert into YWANG8.VUEPRIXTOTAL (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,TOTAL) values (2,'Antoine','Pique',8);
-Insert into YWANG8.VUEPRIXTOTAL (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,TOTAL) values (6,'Enzo','Boisclair',4);
-Insert into YWANG8.VUEPRIXTOTAL (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,TOTAL) values (3,'Quentin','Bonami',4);
-Insert into YWANG8.VUEPRIXTOTAL (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,TOTAL) values (8,'Lucien','Bouvier',4);
-Insert into YWANG8.VUEPRIXTOTAL (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,TOTAL) values (7,'Alex','Richer',6);
-REM INSERTING into YWANG8.VUESOLD
-SET DEFINE OFF;
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (1,'Martin','Maxime',60);
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (2,'Antoine','Pique',52);
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (3,'Quentin','Bonami',26);
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (4,'Lucas','Lapierre',18);
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (5,'Matheo','Gamelin',24);
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (6,'Enzo','Boisclair',26);
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (7,'Alex','Richer',24);
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (8,'Lucien','Bouvier',26);
-Insert into YWANG8.VUESOLD (ID_ENFANT,PRENOMPERSONNE,NOMPERSONNE,SOLDE) values (10,'Granville','Hugo',30);
-
-
