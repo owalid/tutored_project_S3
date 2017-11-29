@@ -141,7 +141,7 @@
 --------------------------------------------------------
 
   ALTER TABLE "AJOUT_ARGENT" ADD CONSTRAINT "AJOUT_ARGENT_PK" PRIMARY KEY ("ID_AJOUT");
-  ALTER TABLE "AJOUT_ARGENT" MODIFY ("ID_AJOUT" NOT NULL ENABLE);
+  --ALTER TABLE "AJOUT_ARGENT" MODIFY ("ID_AJOUT" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table BENEVOLE
 --------------------------------------------------------
@@ -154,13 +154,9 @@
 --------------------------------------------------------
 
   ALTER TABLE "CATEGORIE" ADD CONSTRAINT "CATEGORIE_PK" PRIMARY KEY ("ID_CATEGORIE");
-  ALTER TABLE "CATEGORIE" MODIFY ("ID_CATEGORIE" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table CLIENT
---------------------------------------------------------
+  --ALTER TABLE "CATEGORIE" MODIFY ("ID_CATEGORIE" NOT NULL ENABLE);
 
-  ALTER TABLE "CLIENT" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "CLIENT" ADD PRIMARY KEY ("ID");
+
 --------------------------------------------------------
 --  Constraints for Table CONSOMME
 --------------------------------------------------------
@@ -173,7 +169,7 @@
 --  Constraints for Table COURSE
 --------------------------------------------------------
 
-  ALTER TABLE  "COURSE" MODIFY ("IDCOURSE" NOT NULL ENABLE);
+  --ALTER TABLE  "COURSE" MODIFY ("IDCOURSE" NOT NULL ENABLE);
   ALTER TABLE  "COURSE" MODIFY ("LOGINBENEVOLE" NOT NULL ENABLE);
   ALTER TABLE  "COURSE" ADD CONSTRAINT "TABLE1_PK" PRIMARY KEY ("IDCOURSE");
 --------------------------------------------------------
@@ -181,7 +177,7 @@
 --------------------------------------------------------
 
   ALTER TABLE  "ENFANT" ADD CONSTRAINT "ENFANT_PK" PRIMARY KEY ("ID_ENFANT", "ID_PERSONNE");
-  ALTER TABLE  "ENFANT" MODIFY ("ID_ENFANT" NOT NULL ENABLE);
+ -- ALTER TABLE  "ENFANT" MODIFY ("ID_ENFANT" NOT NULL ENABLE);
   ALTER TABLE  "ENFANT" MODIFY ("ID_PERSONNE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table EST_COMPOSE_DE
@@ -190,23 +186,19 @@
   ALTER TABLE  "EST_COMPOSE_DE" ADD CONSTRAINT "EST_COMPOSE_DE_PK" PRIMARY KEY ("ID_PRODUIT_PRODUIT", "ID_PRODUIT");
   ALTER TABLE  "EST_COMPOSE_DE" MODIFY ("ID_PRODUIT" NOT NULL ENABLE);
   ALTER TABLE  "EST_COMPOSE_DE" MODIFY ("ID_PRODUIT_PRODUIT" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table LOCATION
---------------------------------------------------------
 
-  ALTER TABLE  "LOCATION" MODIFY ("DATEEMPRUNT" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table PERSONNE
 --------------------------------------------------------
 
   ALTER TABLE  "PERSONNE" ADD CONSTRAINT "PERSONNE_PK" PRIMARY KEY ("ID_PERSONNE");
-  ALTER TABLE  "PERSONNE" MODIFY ("ID_PERSONNE" NOT NULL ENABLE);
+ -- ALTER TABLE  "PERSONNE" MODIFY ("ID_PERSONNE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table PRODUIT
 --------------------------------------------------------
 
   ALTER TABLE  "PRODUIT" ADD CONSTRAINT "PRODUIT_PK" PRIMARY KEY ("ID_PRODUIT");
-  ALTER TABLE  "PRODUIT" MODIFY ("ID_PRODUIT" NOT NULL ENABLE);
+  --ALTER TABLE  "PRODUIT" MODIFY ("ID_PRODUIT" NOT NULL ENABLE);
   ALTER TABLE  "PRODUIT" ADD CONSTRAINT "UNIQUELIBELLE" UNIQUE ("LIBELLEPRODUIT");
 --------------------------------------------------------
 --  Constraints for Table PRODUIT_COMPOSE
