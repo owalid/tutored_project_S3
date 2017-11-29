@@ -5,10 +5,10 @@
 --  DDL for Trigger ALERTE
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "YWANG8"."ALERTE" 
+CREATE OR REPLACE EDITIONABLE TRIGGER ALERTE 
 AFTER INSERT OR UPDATE ON PRODUIT_simple FOR EACH ROW
- WHEN (NEW.stock<10/*Qte minimum*/ AND NEW.stock>=0) BEGIN
-        DBMS_OUTPUT.PUT_LINE('veuillez allez faire les courses car Il ne reste pas beaucoup d exemplaires de ce produit.');
+ WHEN (NEW.stock<10/*Qte minimum*/ AND NEW.stock>=0)
+BEGIN
+        DBMS_OUTPUT.PUT_LINE('Il y a pas beaucoup de restant');
 END;
-/
-ALTER TRIGGER "YWANG8"."ALERTE" ENABLE;
+

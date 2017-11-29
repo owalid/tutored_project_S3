@@ -43,8 +43,8 @@ Insert into  PRODUIT_COMPOSE (ID_PRODUIT) values (6);
 Insert into  PRODUIT_SIMPLE (PRIXUNITAIRE,STOCK,ID_PRODUIT) values (2,2,7);
 Insert into  PRODUIT_SIMPLE (PRIXUNITAIRE,STOCK,ID_PRODUIT) values (4,2,8);
 
-Insert into  EST_COMPOSE_DE (QTECOMPOSITION, ID_PRODUIT_PRODUIT) values (1,6,7);
-Insert into  EST_COMPOSE_DE (QTECOMPOSITION, ID_PRODUIT_PRODUIT) values (1,6,8);
+Insert into  EST_COMPOSE_DE (QTECOMPOSITION,ID_PRODUIT ,ID_PRODUIT_PRODUIT) values (1,6,7);
+Insert into  EST_COMPOSE_DE (QTECOMPOSITION,ID_PRODUIT, ID_PRODUIT_PRODUIT) values (1,6,8);
 
 
 Insert into  ROLE (ID_ROLE) values (1);
@@ -65,44 +65,44 @@ Insert into  BENEVOLE (LOGINBENEVOLE,MOTDEPASSEBENEVOLE,ID_PERSONNE) values ('ma
 Insert into  BENEVOLE (LOGINBENEVOLE,MOTDEPASSEBENEVOLE,ID_PERSONNE) values ('carolieb@gmail.com','cb001',6);
 
 
-Insert into  A_POUR_ROLE (LOGINBENEVOLE, ID_ROLE) values ('pierremartin@gmail.com',1,1);
+Insert into  A_POUR_ROLE (LOGINBENEVOLE, ID_personne,ID_ROLE) values ('pierremartin@gmail.com',1,1);
 
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('pierremartin@gmail.com','0102030405',11,1);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('georgespique@gmail.com','0102034405',12,1);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('margueriteb@gmail.com','0102230405',13,2);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('magnolial@gmail.com','0102038405',14,3);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('estellegamelin@gmail.com','0102330405',15,5);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('carolieb@gmail.com','0102465405',16,4);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('richardricher@gmail.com','0101230405',17,2);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('martinbouvier@gmail.com','0108030405',18,1);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('christinesalois@gmail.com','0102030405',19,4);
-Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_CATEGORIE) values ('gauvingranville@gmail.com','0102078705',20,3);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT,id_personne, ID_CATEGORIE) values ('pierremartin@gmail.com','0102030405',11,1);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_personne,ID_CATEGORIE) values ('georgespique@gmail.com','0102034405',12,1);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT,ID_personne, ID_CATEGORIE) values ('margueriteb@gmail.com','0102230405',13,2);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT,ID_personne,ID_CATEGORIE) values ('magnolial@gmail.com','0102038405',14,3);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_personne,ID_CATEGORIE) values ('estellegamelin@gmail.com','0102330405',15,5);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_personne,ID_CATEGORIE) values ('carolieb@gmail.com','0102465405',16,4);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT,ID_personne, ID_CATEGORIE) values ('richardricher@gmail.com','0101230405',17,2);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT, ID_personne,ID_CATEGORIE) values ('martinbouvier@gmail.com','0108030405',18,1);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT,ID_personne,ID_CATEGORIE) values ('christinesalois@gmail.com','0102030405',19,4);
+Insert into  ENFANT ( MAILCONTACTENFANT,TELCONTACTENFANT,ID_personne, ID_CATEGORIE) values ('gauvingranville@gmail.com','0102078705',20,3);
 
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,1,11);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,2,12);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,3,13);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,4,14);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,5,15);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,6,16);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,7,17);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,8,18);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,2,12);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,10,20);
-Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE) values (30,sysdate,1,11);
-
-
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,1,11);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,2,12);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,3,13);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,4,14);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,5,15);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,6,16);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,7,17);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,8,18);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,2,12);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,10,20);
+Insert into  AJOUT_ARGENT ( MONTANTARGENT,DATEAJOUT, ID_PERSONNE, ID_enfant) values (30,sysdate,1,11);
 
 
-Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_PERSONNE) values (sysdate,1,6,2,12);
-Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_PERSONNE) values (sysdate,1,8,3,13);
-Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_PERSONNE) values (sysdate,2,6,4,14);
-Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_PERSONNE) values (sysdate,3,7,5,15);
-Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_PERSONNE) values (sysdate,1,8,6,16);
-Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_PERSONNE) values (sysdate,1,6,7,17);
-Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_PERSONNE) values (sysdate,2,7,8,18);
-Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_PERSONNE) values (sysdate,1,7,2,12);
 
-Insert into  COURSE (MONTANTCOURSE,DATECOURSE,LOGINBENEVOLE,ID_PERSONNE) values (50,to_date('27-11-17','DD-MON-RR'),'pierremartin@gmail.com',1);
+
+Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,ID_produit,  ID_PERSONNE, ID_enfant) values (sysdate,1,6,2,12);
+Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,ID_produit,  ID_PERSONNE, ID_enfant) values (sysdate,1,8,3,13);
+Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION, ID_produit, ID_PERSONNE, ID_enfant) values (sysdate,2,6,4,14);
+Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION, ID_produit, ID_PERSONNE, ID_enfant) values (sysdate,3,7,5,15);
+Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,ID_produit,  ID_PERSONNE, ID_enfant) values (sysdate,1,8,6,16);
+Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,  ID_produit,ID_PERSONNE, ID_enfant) values (sysdate,1,6,7,17);
+Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,ID_produit,  ID_PERSONNE, ID_enfant) values (sysdate,2,7,8,18);
+Insert into  CONSOMME (DATECONSOMMATION,QTECONSOMMATION,ID_produit,  ID_PERSONNE, ID_enfant) values (sysdate,1,7,2,12);
+
+Insert into  COURSE (MONTANTCOURSE,DATECOURSE,LOGINBENEVOLE,ID_PERSONNE) values (50,sysdate,'pierremartin@gmail.com',1);
 
 
 
