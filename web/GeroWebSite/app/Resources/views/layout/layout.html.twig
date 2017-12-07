@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" />
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+{% block body %}{% endblock %}
+
+
+<footer id="footer" class="fixed-bottom">
+    <hr />
+    <div class="container">
+        <div class="row">
+
+            <div class="span4 offset1">
+                <h4>Informations</h4>
+                <ul class="nav nav-stacked">
+                    <li><a href="#">CGV</a></li>&nbsp;&nbsp;&nbsp;
+                    <li><a href="#">Mentions légales</a>
+                </ul>
+            </div>
+
+            <div class="span2">
+                <h4>Nous contacter</h4>
+                <p><i class="icon-phone"></i>&nbsp;Tel: 02 35 00 00 00</p>
+                <p><i class="icon-print"></i>&nbsp;Fax: 02 35 00 00 00</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span6">
+                <p>&copy; Copyright 2014 - GeRo</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{{ asset('js/jquery-1.10.0.min.js') }}"></script>
+<script src="{{ asset('../js/bootstrap.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>
