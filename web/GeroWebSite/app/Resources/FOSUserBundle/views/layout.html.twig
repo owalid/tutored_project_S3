@@ -1,5 +1,6 @@
 {% extends "::Layout/Layout.html.twig" %}
 {% block body %}
+
     <div class="container">
         {% for type, messages in app.session.flashbag.all() %}
             {% for message in messages %}

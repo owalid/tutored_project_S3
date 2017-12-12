@@ -1,0 +1,35 @@
+{% block body %}
+    <nav class="navbar fixed-top navbar-expand-lg navbar-info bg-light">
+        <a class="navbar-brand" href="{{ path('home') }}">Gero</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" style="margin-left:40%;">
+                <li class="nav-item active">
+                    <a class="badge badge-light nav-link" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="badge badge-light nav-link" href="#">Produits <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="badge badge-light nav-link" href="#">Panier <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="badge badge-light nav-link" href="#">A propos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="badge badge-light nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
+                </li>
+
+
+            </ul>
+            {#<p> {{ user.username }}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#}
+            {#<p>{{ user.email }}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#}
+
+            <a href="{{ path('fos_user_security_logout') }}" type="button" class="btn btn-outline-success" >Deconnexion</a>
+
+        </div>
+    </nav>
+{% endblock %}
