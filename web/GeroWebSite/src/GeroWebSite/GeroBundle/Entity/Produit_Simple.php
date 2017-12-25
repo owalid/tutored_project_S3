@@ -41,13 +41,6 @@ class Produit_Simple
      */
     private $produit;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_Produit", type="integer")
-     */
-    private $idProduit;
-
 
     /**
      * Get id
@@ -107,29 +100,6 @@ class Produit_Simple
         return $this->stock;
     }
 
-    /**
-     * Set idProduit
-     *
-     * @param integer $idProduit
-     *
-     * @return Produit_Simple
-     */
-    public function setIdProduit($idProduit)
-    {
-        $this->idProduit = $idProduit;
-
-        return $this;
-    }
-
-    /**
-     * Get idProduit
-     *
-     * @return int
-     */
-    public function getIdProduit()
-    {
-        return $this->idProduit;
-    }
 
     /**
      * Set produit

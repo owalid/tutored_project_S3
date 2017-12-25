@@ -21,19 +21,6 @@ class Consomme
      */
     private $id;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_Produit", type="integer")
-     */
-    private $idProduit;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_User", type="integer")
-     */
-    private $idUser;
 
     /**
      * @var \DateTime
@@ -74,53 +61,6 @@ class Consomme
         return $this->id;
     }
 
-    /**
-     * Set idProduit
-     *
-     * @param integer $idProduit
-     *
-     * @return Consomme
-     */
-    public function setIdProduit($idProduit)
-    {
-        $this->idProduit = $idProduit;
-
-        return $this;
-    }
-
-    /**
-     * Get idProduit
-     *
-     * @return int
-     */
-    public function getIdProduit()
-    {
-        return $this->idProduit;
-    }
-
-    /**
-     * Set idUser
-     *
-     * @param integer $idUser
-     *
-     * @return Consomme
-     */
-    public function setIdUser($idUser)
-    {
-        $this->idUser = $idUser;
-
-        return $this;
-    }
-
-    /**
-     * Get idUser
-     *
-     * @return int
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
 
     /**
      * Set dateConso

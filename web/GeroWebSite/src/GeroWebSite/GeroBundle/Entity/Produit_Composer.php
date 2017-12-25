@@ -24,13 +24,6 @@ class Produit_Composer
     /**
      * @var int
      *
-     * @ORM\Column(name="id_Produit", type="integer")
-     */
-    private $idProduit;
-
-    /**
-     * @var int
-     *
      * @ORM\Column(name="qteComposition", type="integer")
      */
     private $qteComposition;
@@ -56,30 +49,6 @@ class Produit_Composer
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idProduit
-     *
-     * @param integer $idProduit
-     *
-     * @return Produit_Composer
-     */
-    public function setIdProduit($idProduit)
-    {
-        $this->idProduit = $idProduit;
-
-        return $this;
-    }
-
-    /**
-     * Get idProduit
-     *
-     * @return int
-     */
-    public function getIdProduit()
-    {
-        return $this->idProduit;
     }
 
     /**
