@@ -2,17 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: Othmane
- * Date: 13/12/2017
- * Time: 12:55
+ * Date: 26/12/2017
+ * Time: 18:50
  */
-
 namespace GeroWebSite\GeroBundle\DataFixtures\ORM;
 
-use Ecommerce\EcommerceBundle\DataFixtures\ORM\UtilisateursData;
+
 use GeroWebSite\GeroBundle\Entity\AjoutArgent;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use Utilisateurs\UtilisateursBundle\Entity\Utilisateurs;
+use Utilisateurs\UtilisateursBundle\DataFixures\ORM\UtilisateursData;
 
 class AjoutArgentData extends Fixture
 {
@@ -52,16 +51,13 @@ class AjoutArgentData extends Fixture
 
     public function getDependencies()
     {
-    return array(
-        UtilisateursData::class,
-    );
+        return array(
+            UtilisateursData::class,
+        );
     }
 
-
-
-
-    public  function getOrder(){
-        return 8;
+    public function getOrder()
+    {
+        return 4;
     }
 }
-?>

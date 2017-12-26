@@ -6,7 +6,7 @@
  * Time: 23:07
  */
 
-namespace Ecommerce\EcommerceBundle\DataFixtures\ORM;
+namespace Utilisateurs\UtilisateursBundle\DataFixures\ORM;
 
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -35,71 +35,42 @@ class UtilisateursData extends Fixture
         $user2->setPassword($password);
         $manager->persist($user2);
 
+
         $user3 = new Utilisateurs();
-        $user3->setUsername('root');
-        $user3->setEmail('root@gmail.com');
-        $user3->setEnabled('1');
-        $encoder = $this->container->get('security.password_encoder');
-        $password = $encoder->encodePassword($user3,'root');
-        $user3->setPassword($password);
+        $user3->setUsername('pauline');
+        $user3->setEmail('pauline@gmail.com');
+        $user3->setEnabled(1);
+        $user3->setPassword($this->container->get('security.encoder_factory')->getEncoder($user3)->encodePassword('pauline', $user3->getSalt()));
         $manager->persist($user3);
 
-
         $user4 = new Utilisateurs();
-        $user4->setUsername('root');
-        $user4->setEmail('root@gmail.com');
-        $user4->setEnabled('1');
-        $encoder = $this->container->get('security.password_encoder');
-        $password = $encoder->encodePassword($user4,'root');
-        $user4->setPassword($password);
+        $user4->setUsername('tiffany');
+        $user4->setEmail('tiffany@gmail.com');
+        $user4->setEnabled(1);
+        $user4->setPassword($this->container->get('security.encoder_factory')->getEncoder($user4)->encodePassword('tiffany', $user4->getSalt()));
         $manager->persist($user4);
 
-
         $user5 = new Utilisateurs();
-        $user5->setUsername('root');
-        $user5->setEmail('root@gmail.com');
-        $user5->setEnabled('1');
-        $encoder = $this->container->get('security.password_encoder');
-        $password = $encoder->encodePassword($user5,'root');
-        $user5->setPassword($password);
+        $user5->setUsername('dominique');
+        $user5->setEmail('dominique@gmail.com');
+        $user5->setEnabled(1);
+        $user5->setPassword($this->container->get('security.encoder_factory')->getEncoder($user5)->encodePassword('dominique', $user5->getSalt()));
         $manager->persist($user5);
-
-
-        $user6 = new Utilisateurs();
-        $user6->setUsername('root');
-        $user6->setEmail('root@gmail.com');
-        $user6->setEnabled('1');
-        $encoder = $this->container->get('security.password_encoder');
-        $password = $encoder->encodePassword($user6,'root');
-        $user6->setPassword($password);
-        $manager->persist($user6);
-
-
-        $user7 = new Utilisateurs();
-        $user7->setUsername('root');
-        $user7->setEmail('root@gmail.com');
-        $user7->setEnabled('1');
-        $encoder = $this->container->get('security.password_encoder');
-        $password = $encoder->encodePassword($user7,'root');
-        $user7->setPassword($password);
-        $manager->persist($user7);
 
 
 
         $manager->flush();
 
-        $this->addReference('utilisateur1',$user1);
-        $this->addReference('utilisateur2',$user2);
-        $this->addReference('utilisateur3',$user3);
-        $this->addReference('utilisateur1',$user4);
-        $this->addReference('utilisateur2',$user5);
-        $this->addReference('utilisateur3',$user6);
-        $this->addReference('utilisateur3',$user7);
+        $this->addReference('user1',$user1);
+        $this->addReference('user2',$user2);
+        $this->addReference('user3',$user3);
+        $this->addReference('user4',$user4);
+        $this->addReference('user5',$user5);
 
     }
 
     public  function getOrder(){
-        return 7;
+        return 3;
     }
 }
 ?>

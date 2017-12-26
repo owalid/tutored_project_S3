@@ -48,11 +48,7 @@ class Produit
      */
     private $categorie;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="GeroWebSite\GeroBundle\Entity\Course", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $course;
+
 
     /**
      * @ORM\OneToOne(targetEntity="GeroWebSite\GeroBundle\Entity\Media", cascade={"persist","remove"})
