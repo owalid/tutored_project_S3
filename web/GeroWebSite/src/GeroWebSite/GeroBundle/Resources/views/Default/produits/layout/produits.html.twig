@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="span3">
+            {% include '::modulesUsed/categorieNav.html.twig'%}
+        </div>
+    </div>
+
+    {#TODO refaire le style de la page#}
+
+    {% for produit in produits %}
+        <li class="span3">
+            <div class="thumbnail">
+                <img src="{{ produit.image.path }}"width="300" height="150">
+                <div class="caption">
+                    <h4>{{ produit.nom }}</h4>
+                    {#<p>{{ produit.prix}}€</p>#}
+                    <a class="btn btn-primary" href="{{ path('presentation', { 'id' : produit.id }) }}">Plus d'infos</a>
+                    <a class="btn btn-success" >Ajouter au panier</a>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</div>

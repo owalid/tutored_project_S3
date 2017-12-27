@@ -1,0 +1,9 @@
+{% extends "::Layout/Layout.html.twig" %}
+{% block body %}
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Nos produits</li>
+        {{ render (controller('GeroBundle:Categorie:categorieNav')) }}
+    </ul>
+</div>
+{% endblock %}

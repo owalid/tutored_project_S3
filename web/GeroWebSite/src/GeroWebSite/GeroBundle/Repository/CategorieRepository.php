@@ -10,4 +10,5 @@ namespace GeroWebSite\GeroBundle\Repository;
  */
 class CategorieRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }
