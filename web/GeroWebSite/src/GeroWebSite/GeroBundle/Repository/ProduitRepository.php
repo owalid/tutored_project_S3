@@ -10,6 +10,14 @@ namespace GeroWebSite\GeroBundle\Repository;
  */
 class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findArray($array){
+        $qb= $this->createQueryBuilder('u')
+            ->select('u')
+            ->where('u.id IN (:array)')
+            ->setParameter('array',$array);
+        return $qb->getQuery()->getResult();
+    }
+
     public function byCategorie($categorie)
     {
         $qb = $this->createQueryBuilder('u')
@@ -20,5 +28,16 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('categorie', $categorie);
 
         return $qb->getQuery()->getResult();
+    }
+
+    public function recherche($chaine){
+        $qb2 = $this->createQueryBuilder('u')
+            ->select('u')
+            ->where('u.nom like :chaine')
+            ->andWhere('u.disponible = 1')
+            ->orderBy('u.id')
+            ->setParameter('chaine',$chaine);
+
+        return $qb2->getQuery()->getResult();
     }
 }

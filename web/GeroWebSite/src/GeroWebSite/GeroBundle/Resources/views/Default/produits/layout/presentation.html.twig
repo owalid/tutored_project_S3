@@ -22,7 +22,7 @@
                         <h5>{{ produit.categorie.nomCategorie }}</h5>
                         <p>{{ produit.description }}</p>
                         {% if Panier[produit.id] is not defined %}
-
+                            <form action="{{ path('ajouter', { 'id' : produit.id}) }}" method="get">
 
                                 <select name="qte" class="span1">
                                     {% for i in 1..10  %}
@@ -34,7 +34,7 @@
                                 <div>
                                     <button class="btn btn-primary">Ajouter au panier</button>
                                 </div>
-
+                            </form>
                         {% else %}
                             <div>
                                 <a href="{{ path('Panier') }}" class="btn btn-primary">Voir mon panier</a>

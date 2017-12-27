@@ -13,3 +13,8 @@ CategorieProduits:
 presentation:
     path:     /produits/{id}
     defaults: { _controller: GeroBundle:Produits:presentation}
+
+RechercheProduits:
+    path:     /recherche
+    defaults: { _controller: GeroBundle:Produits:rechercherTraitement}
+    methods:  [POST]

@@ -1,9 +1,17 @@
 {% extends "::Layout/Layout.html.twig" %}
 {% block body %}
+    {#TODO Refaire le style de la page#}
 <div class="well">
     <ul class="nav nav-list">
         <li class="nav-header">Nos produits</li>
         {{ render (controller('GeroBundle:Categorie:categorieNav')) }}
     </ul>
 </div>
+
+    {#formulaire de recherche des produits#}
+    <div class="container">
+        <div class="span3">
+            {{ render(controller("GeroBundle:Produits:recherche")) }}
+        </div>
+    </div>
 {% endblock %}
