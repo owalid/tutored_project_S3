@@ -16,12 +16,27 @@ class PanierController extends Controller
         else
             $article = count($session->get('Panier'));
 
-        return $this->render('GeroBundle:Default:panier/layout/panier.html.twig', array('article' => $article));
+
+        return $this->render('GeroBundle:Default:panier/moduleUsed/panier.html.twig', array('article' => $article));
 
     }
     public function validationAction()
     {
-        return $this->render('GeroBundle:Default:panier/layout/validation.html.twig');
+        $request = $this->container->get('request_stack')->getCurrentRequest('adresse');
+
+        if($request->getMethod() == 'POST')
+            $this->setLivraisonOnSession();
+
+        $em = $this->getDoctrine()->getManager();
+        $session = $this->container->get('request_stack')->getCurrentRequest()->getSession();
+
+
+        $produits = $em->getRepository('GeroBundle:Produit')->findArray(array_keys($session->get('Panier')));
+
+        //livraison et facturation null ????
+
+        return $this->render('GeroBundle:Default:panier/layout/validation.html.twig',array('produits' => $produits,
+                                                                                                'Panier' => $session->get('Panier')));
     }
 
     public function supprimerAction($id){
@@ -82,5 +97,7 @@ class PanierController extends Controller
         return $this->render('GeroBundle:Default:panier/layout/panier.html.twig', array('produits' => $produits ,
                                                                                             'Panier' => $session->get('Panier')));
     }
+
+
 
 }

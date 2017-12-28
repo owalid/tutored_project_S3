@@ -15,7 +15,7 @@
                 <a class="badge badge-light nav-link" href="{{ path('produit') }}">Produits <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="badge badge-light nav-link" href="#">Panier <span class="sr-only">(current)</span></a>
+                {{ render(controller("GeroBundle:Panier:menu")) }}
             </li>
             <li class="nav-item active">
                 <a class="badge badge-light nav-link" href="#">A propos <span class="sr-only">(current)</span></a>
@@ -27,9 +27,11 @@
 
         </ul>
 
-        <a href="{{ path('fos_user_security_login') }}" type="button" class="btn btn-outline-success" >Connexion</a>
-        <a href="{{ path('fos_user_registration_register') }}" type="button" class="btn btn-outline-success" style="margin-left: 10px;">Inscription</a>
-
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursCo.html.twig'%}
+        {% else %}
+            {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig'%}
+        {% endif %}
     </div>
 </nav>
 {% endblock %}
