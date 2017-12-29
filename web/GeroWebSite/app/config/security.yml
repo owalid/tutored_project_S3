@@ -5,7 +5,7 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-            ROLE_BENEVOLE:       ROLE_USER
+            ROLE_BENEVOLE:       ROLE_BENEVOLE
             ROLE_ENFANT:         ROLE_USER
             ROLE_SUPER_ADMIN:    ROLE_ADMIN
 
@@ -36,5 +36,6 @@ security:
             - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/admin/, role: ROLE_ADMIN }
+            - { path: ^/benevole/, role: ROLE_BENEVOLE }
 
 

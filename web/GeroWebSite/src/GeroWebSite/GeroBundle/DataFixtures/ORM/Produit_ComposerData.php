@@ -57,6 +57,6 @@ class Produit_ComposerData extends Fixture
     }
 
     public  function getOrder(){
-        return 7;
+        return 8;
     }
 }

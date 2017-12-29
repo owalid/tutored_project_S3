@@ -1,8 +1,0 @@
-{#affichage des categorie#}
-{% for categorie in categories %}
-    <li >
-        <a href="{{ path('CategorieProduits',{'categorie' : categorie.id}) }}">{{categorie.nomCategorie  }}</a>
-    </li>
-{% endfor %}
-
-

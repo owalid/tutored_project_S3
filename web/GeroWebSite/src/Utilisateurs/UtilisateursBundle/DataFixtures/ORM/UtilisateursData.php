@@ -8,12 +8,12 @@
 
 namespace Utilisateurs\UtilisateursBundle\DataFixures\ORM;
 
-
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Utilisateurs\UtilisateursBundle\Entity\Utilisateurs;
+use Doctrine\Common\DataFixtures\FixtureInterface;
 
-class UtilisateursData extends Fixture
+class UtilisateursData extends Fixture implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {

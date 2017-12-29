@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new GeroWebSite\GeroBundle\GeroBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Utilisateurs\UtilisateursBundle\UtilisateursBundle(),
+            new Pages\PagesBundle\PagesBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

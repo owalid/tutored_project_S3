@@ -1,7 +1,7 @@
 {#affichage des categorie#}
 {% for categorie in categories %}
    <li class="list-group-item">
-<a href="{{ path('CategorieProduits',{'categorie' : categorie.id}) }}">{{categorie.nomCategorie  }}</a>
+        <a href="{{ path('CategorieProduits',{'categorie' : categorie.id}) }}">{{categorie.nomCategorie  }}</a>
     </li>
 {% endfor %}
 

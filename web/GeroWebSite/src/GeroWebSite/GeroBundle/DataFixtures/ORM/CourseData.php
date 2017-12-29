@@ -56,6 +56,6 @@ class CourseData extends Fixture
     }
 
     public  function getOrder(){
-        return 8;
+        return 9;
     }
 }

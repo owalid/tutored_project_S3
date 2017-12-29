@@ -1,50 +1,47 @@
-<div class="row">
-
+<div class="span4">
+{% include '::modulesUsed/categorieNav.html.twig'%}
+</div>
 <div class="container">
-        <div class="span3">
-            {% include '::modulesUsed/categorieNav.html.twig'%}
-        </div>
-    </div>
-
+    <div class="row">
+        <div class="span12">
 
     {#TODO refaire le style de la page#}
-
-
-
     {#affichage des produits#}
     {% if produits|length != 0 %}
-        <ul>
+        <ul class="thumbnail">
             {% for produit in produits %}
-                <li class="span3">
+                <li class="span3 list-group-item">
+                        <img src="{{ produit.image.path }}" width="300" height="150">
                     <div class="thumbnail">
-
-                        <img src="{{ produit.image.path }}"width="300" height="150">
-                        <div class="caption">
                             <h4>{{ produit.nom }}</h4>
                             {#<p>{{ produit.prix}}€</p>#}
                             <a class="btn btn-primary" href="{{ path('presentation', { 'id' : produit.id }) }}">Plus d'infos</a>
                             <a class="btn btn-success" href="{{ path('ajouter', { 'id' : produit.id}) }}">Ajouter au panier</a>
-                        </div>
                     </div>
                 </li>
             {% endfor %}
         </ul>
-
-        <div class="pagination">
-            <ul>
-                <li class="disabled"><span>Précédent</span></li>
-                <li class="disabled"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">Suivant</a></li>
-            </ul>
-        </div>
+    </div>
+</div>
+    <div class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
     {% else %}
         Aucun produit
     {% endif %}
 </div>
-</div>
+
 
 

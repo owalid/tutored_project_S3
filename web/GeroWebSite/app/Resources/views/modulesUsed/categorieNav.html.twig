@@ -5,24 +5,20 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-xs-3">
-
+                <div class="col-3">
                     <ul class="list-group">
                         <li class="list-group-item">Nos produits</li>
                         {{ render (controller('GeroBundle:Categorie:categorieNav')) }}
-
-
                     </ul>
                 </div>
-
+            </div><br/>
+                {#formulaire de recherche des produits#}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                             {{ render(controller("GeroBundle:Produits:recherche")) }}
+                        </div>
+                    </div>
+                </div>
             </div>
-
-</div>
-
-    {#formulaire de recherche des produits#}
-    <div class="container">
-        <div class="span1">
-            {{ render(controller("GeroBundle:Produits:recherche")) }}
-        </div>
-    </div>
 {% endblock %}
