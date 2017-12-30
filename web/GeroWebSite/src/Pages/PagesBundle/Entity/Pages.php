@@ -31,7 +31,7 @@ class Pages
     /**
      * @var string
      *
-     * @ORM\Column(name="contenu", type="string", length=255)
+     * @ORM\Column(name="contenu", type="text")
      */
     private $contenu;
 

@@ -2,20 +2,21 @@
 
 {% block body %}
     <h1>Page edit</h1>
-
+<div class="span10">
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <button type="submit" class="icon-book" > Editer</button>
 
-    <ul>
-        <li>
-            <a href="{{ path('adminPages_index') }}">Back to the list</a>
-        </li>
-        <li>
+    {{ form_end(edit_form) }}
+</div>
+<div class="span12">
+
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <button type="submit" class="icon-trash"> Supprimer</button>
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+
+            <a href="{{ path('adminPages_index') }}"><i class="icon-arrow-left"></i> Retour</a>
+
+</div>
 {% endblock %}

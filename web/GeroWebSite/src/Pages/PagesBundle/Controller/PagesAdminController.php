@@ -33,7 +33,7 @@ class PagesAdminController extends Controller
      */
     public function newAction(Request $request)
     {
-        $page = new Page();
+        $page = new Pages();
         $form = $this->createForm('Pages\PagesBundle\Form\PagesType', $page);
         $form->handleRequest($request);
 

@@ -6,31 +6,28 @@
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>Id &nbsp;&nbsp;&nbsp;&nbsp;</th>
                 <td>{{ page.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
+                <th>Titre &nbsp;&nbsp;&nbsp;&nbsp;</th>
                 <td>{{ page.titre }}</td>
             </tr>
             <tr>
-                <th>Contenu</th>
+                <th>Contenu&nbsp;&nbsp;&nbsp;&nbsp;</th>
                 <td>{{ page.contenu }}</td>
             </tr>
         </tbody>
-    </table>
+    </table><br><br>
 
-    <ul>
-        <li>
-            <a href="{{ path('adminPages_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('adminPages_edit', { 'id': page.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+    <a href="{{ path('adminPages_edit', { 'id': page.id }) }}"><i class="icon-book"></i> Editer</a>
+
+    {{ form_start(delete_form) }}
+    <button type="submit" class="icon-trash"> Supprimer</button>
+    {{ form_end(delete_form) }}
+
+    <a href="{{ path('adminPages_index') }}"><i class="icon-arrow-left"></i> Retour</a>
+
+
 {% endblock %}

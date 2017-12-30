@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
 class PagesType extends AbstractType
 {
     /**
@@ -13,7 +14,7 @@ class PagesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('contenu');
+        $builder->add('titre')->add('contenu',null,array('attr'=> array('class' => 'ckeditor')));
     }/**
      * {@inheritdoc}
      */

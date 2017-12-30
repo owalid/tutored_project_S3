@@ -3,6 +3,16 @@ body {
     padding-top: 60px;
 }
 
+
+label {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+input {
+    margin-right: 40px;
+}
+
 .jumbotron-billboard .img {
     margin-bottom: 0px;
     opacity: 0.2;
