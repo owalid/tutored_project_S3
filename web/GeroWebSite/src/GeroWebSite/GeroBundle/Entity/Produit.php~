@@ -64,6 +64,14 @@ class Produit
     private $prixUnitaire;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="stock", type="integer")
+     */
+    private $stock;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -216,5 +224,29 @@ class Produit
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set prixUnitaire
+     *
+     * @param float $prixUnitaire
+     *
+     * @return Produit
+     */
+    public function setPrixUnitaire($prixUnitaire)
+    {
+        $this->prixUnitaire = $prixUnitaire;
+
+        return $this;
+    }
+
+    /**
+     * Get prixUnitaire
+     *
+     * @return float
+     */
+    public function getPrixUnitaire()
+    {
+        return $this->prixUnitaire;
     }
 }

@@ -24,6 +24,7 @@ class ProduitData extends Fixture
         $produit1->setPrixUnitaire('4.5');
         $produit1 ->setCategorie($this->getReference('categorie1'));
         $produit1 ->setImage($this->getReference('media1'));
+        $produit1->setStock(30);
 
         $manager->persist($produit1);
 
@@ -35,7 +36,7 @@ class ProduitData extends Fixture
         $produit2->setPrixUnitaire('3.5');
         $produit2 ->setCategorie($this->getReference('categorie1'));
         $produit2 ->setImage($this->getReference('media2'));
-
+        $produit2->setStock(30);
         $manager->persist($produit2);
 
 
@@ -46,7 +47,7 @@ class ProduitData extends Fixture
         $produit3->setPrixUnitaire('2');
         $produit3 ->setCategorie($this->getReference('categorie2'));
         $produit3 ->setImage($this->getReference('media3'));
-
+        $produit3->setStock(30);
         $manager->persist($produit3);
 
 
@@ -57,7 +58,7 @@ class ProduitData extends Fixture
         $produit4->setPrixUnitaire('1.5');
         $produit4 ->setCategorie($this->getReference('categorie4'));
         $produit4 ->setImage($this->getReference('media9'));
-
+        $produit4->setStock(30);
         $manager->persist($produit4);
 
 
@@ -68,7 +69,7 @@ class ProduitData extends Fixture
         $produit5->setPrixUnitaire('4.5');
         $produit5 ->setCategorie($this->getReference('categorie4'));
         $produit5 ->setImage($this->getReference('media11'));
-
+        $produit5->setStock(30);
         $manager->persist($produit5);
 
 
@@ -79,7 +80,7 @@ class ProduitData extends Fixture
         $produit6->setPrixUnitaire('3');
         $produit6 ->setCategorie($this->getReference('categorie4'));
         $produit6 ->setImage($this->getReference('media8'));
-
+        $produit6->setStock(30);
         $manager->persist($produit6);
 
 

@@ -43,7 +43,7 @@ class Produit
     private $disponible;
 
     /**
-     * @ORM\ManyToOne(targetEntity="GeroWebSite\GeroBundle\Entity\Categorie", cascade={"persist","remove"})
+     * @ORM\ManyToOne(targetEntity="GeroWebSite\GeroBundle\Entity\Categorie", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
@@ -62,6 +62,14 @@ class Produit
      * @ORM\Column(name="prixUnitaire", type="float")
      */
     private $prixUnitaire;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="stock", type="integer")
+     */
+    private $stock;
+
 
     /**
      * Get id
@@ -240,5 +248,29 @@ class Produit
     public function getPrixUnitaire()
     {
         return $this->prixUnitaire;
+    }
+
+    /**
+     * Set stock
+     *
+     * @param integer $stock
+     *
+     * @return Produit
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * Get stock
+     *
+     * @return integer
+     */
+    public function getStock()
+    {
+        return $this->stock;
     }
 }

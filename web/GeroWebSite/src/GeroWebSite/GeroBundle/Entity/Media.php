@@ -24,7 +24,7 @@ class Media
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="string", length=50)
+     * @ORM\Column(name="path", type="text")
      */
     private $path;
 
@@ -92,5 +92,10 @@ class Media
     public function getAlt()
     {
         return $this->alt;
+    }
+
+    public function __toString()
+    {
+        return $this->getPath();
     }
 }

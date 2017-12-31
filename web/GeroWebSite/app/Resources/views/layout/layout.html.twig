@@ -15,35 +15,8 @@
 {% include "::modulesUsed/navigation.html.twig"  %}
 
 {% block body %}{% endblock %}
+{% include "::modulesUsed/navigationfooter.html.twig"%}
 
-
-<footer id="footer" class="fixed-bottom" style="background-color: rgba(166,166,166,0.35);">
-
-    <div class="container">
-        <div class="row">
-
-            <div class="span6 offset1">
-                <h4>Informations</h4>
-                <ul class="nav nav-stacked">
-                    <li><a href="#">CGV</a></li>&nbsp;&nbsp;&nbsp;
-                    <li><a href="#">Mentions légales</a>
-                </ul>
-            </div>
-
-            <div class="span3">
-                <h4>Nous contacter</h4>
-                <p><i class="icon-phone"></i>&nbsp;Tel: 02 35 00 00 00</p>
-                <p><i class="icon-envelope"></i>&nbsp;mail: iut.orsay@u-psud.fr</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-3">
-                <p>&copy; Copyright {{ "now"|date("Y") }} - GeRo</p>
-            </div>
-        </div>
-    </div>
-</footer>
 <script src="{{ asset('js/jquery-1.10.0.min.js') }}"></script>
 <script src="{{ asset('../js/bootstrap.js') }}"></script>
 {% block javascripts %}{% endblock %}

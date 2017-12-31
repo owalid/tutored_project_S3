@@ -1,0 +1,30 @@
+{% block body %}
+    <footer id="footer" class="fixed-bottom" style="background-color: rgba(166,166,166,0.35);">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="span6 offset1">
+                    <h4>Informations</h4>
+                    <ul class="nav nav-stacked">
+                        <li><a href="{{ path('page', { 'id' : 1 }) }}">CGV</a></li>&nbsp;&nbsp;&nbsp;
+                        <li><a href="{{ path('page', { 'id' : 2 }) }}">Mentions légales</a></li>
+                    </ul>
+                </div>
+
+                <div class="span3">
+                    <h4>Nous contacter</h4>
+                    <p><i class="icon-phone"></i>&nbsp;Tel: 02 35 00 00 00</p>
+                    <p><i class="icon-envelope"></i>&nbsp;mail: iut.orsay@u-psud.fr</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <p>&copy; Copyright {{ "now"|date("Y") }} - GeRo</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}

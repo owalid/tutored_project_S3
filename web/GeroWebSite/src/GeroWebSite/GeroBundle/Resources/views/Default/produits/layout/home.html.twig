@@ -16,8 +16,8 @@
                                 <p><a class="btn btn-info btn-lg" href="#" role="button">En savoir plus &raquo;</a></p>
 
                             </div>
-                    </div>
-            </div>
+                        </div>
+                     </div>
                 <div class = "carousel slide" data-ride="carousel" id="carousel-example">
 
                     <ol class = "carousel-indicators">
@@ -27,46 +27,24 @@
 
                     </ol>
 
-
+                    {% for produit in produits %}
                     <div class = "carousel-inner">
                         <div class = "item active">
-                            <img src = "{{asset('/web/images/jus_orange.jpg')}}" alt = "Jus d'orange">
+                            <img src="{{ produit.image.path }}" width="300" height="300">
                             <div class="carousel-caption">
-                                <h3>Huumm un bon jus d'orange</h3>
-                                <p>Voici le jus d'orange proposé par GERO</p>
+                                <h3>{{ produit.description}}</h3>
+                                <p>{{ produit.nom }}</p><br><br>
                             </div>
                         </div>
-
-                        <div class = "item">
-                            <img src = "{{asset('/web/images/brownie.jpg')}}" alt = "Brownie">
-                            <div class="carousel-caption">
-                                <h3>Huumm un bon brownie au chocolat</h3>
-                                <p>Voici le merveilleux brownie au chocolat proposé par GERO</p>
-                            </div>
-                        </div>
-
-                        <div class = "item">
-                            <img src = "{{asset('/web/images/muffin.jpg')}}" alt = "Muffin">
-                            <div class="carousel-caption">
-                                <h3>Huumm un bon muffin au chocolat</h3>
-                                <p>Voici le merveilleux muffin au chocolat proposé par GERO</p>
-                            </div>
-                        </div>
-
+                    </div>
+                    {% endfor %}
 
                         <a href="#carousel-example" class="left carousel-control" data-slide="prev">
                             <span class = "icon-prev"></span>
                         </a>
-
                         <a href = "#carousel-example" class="right carousel-control" data-slide = "next">
                             <span class = "icon-next"></span>
                         </a>
-
-                    </div>
-
-
-
-
 
 
                 </div>

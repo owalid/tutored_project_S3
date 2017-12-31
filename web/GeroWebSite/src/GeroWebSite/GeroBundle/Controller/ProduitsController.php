@@ -10,7 +10,10 @@ class ProduitsController extends Controller
 {
     public function homeAction()
     {
-        return $this->render('GeroBundle:Default:produits/layout/home.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $produits = $em->getRepository('GeroBundle:Produit')->findAll();
+
+        return $this->render('GeroBundle:Default:produits/layout/home.html.twig', array('produits' => $produits));
     }
 
     public function categorieAction($categorie){

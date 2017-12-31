@@ -13,14 +13,16 @@
 </head>
 <body>
 {% include "::modulesUsed/navigation.html.twig"  %}
-<a class="brand" href="index.php"><i class="icon-star"></i> Administration </a><br><br><br>
-<div class="position-absolute float-left">
-    {% include '::modulesUsed/navigationAdmin.html.twig' %}
-</div>
 <div class="container">
     <div class="row">
+        <div class="span1">
+            <a class="brand" href="index.php"><i class="icon-star"></i> Administration </a><br><br><br>
+            <div class="position-relative float-left">
+                {% include '::modulesUsed/navigationAdmin.html.twig' %}
+            </div>
+        </div>
 
-        <div class="span9">
+        <div class="span12">
             {% block body %}{% endblock %}
         </div>
     </div>

@@ -5,3 +5,7 @@ routingPanier:
 routingProduits:
   resource: "@GeroBundle/Resources/config/routing/routingProduit.yml"
   prefix: /
+
+routingProduitAdmin:
+  resource: "@GeroBundle/Resources/config/routing/routingProduitAdmin.yml"
+  prefix: /admin/produit
