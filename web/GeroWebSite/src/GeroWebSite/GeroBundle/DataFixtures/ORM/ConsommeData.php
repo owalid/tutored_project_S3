@@ -48,7 +48,7 @@ class ConsommeData extends Fixture
         );
     }
     public  function getOrder(){
-        return 8;
+        return 7;
     }
 }
 ?>

@@ -20,6 +20,8 @@ class UtilisateursData extends Fixture implements FixtureInterface
         $user1 = new Utilisateurs();
         $user1->setUsername('othmane');
         $user1->setEmail('othmane@gmail.com');
+        $user1->setSolde(30.2);
+        $user1->setValider('1');
         $user1->setEnabled('1');
         $encoder = $this->container->get('security.password_encoder');
         $password = $encoder->encodePassword($user1,'1234');
@@ -29,6 +31,8 @@ class UtilisateursData extends Fixture implements FixtureInterface
         $user2 = new Utilisateurs();
         $user2->setUsername('client');
         $user2->setEmail('client@gmail.com');
+        $user2->setSolde(25.3);
+        $user2->setValider('1');
         $user2->setEnabled('1');
         $encoder = $this->container->get('security.password_encoder');
         $password = $encoder->encodePassword($user2,'client');
@@ -39,6 +43,8 @@ class UtilisateursData extends Fixture implements FixtureInterface
         $user3 = new Utilisateurs();
         $user3->setUsername('pauline');
         $user3->setEmail('pauline@gmail.com');
+        $user3->setValider('1');
+        $user3->setSolde(28.9);
         $user3->setEnabled(1);
         $user3->setPassword($this->container->get('security.encoder_factory')->getEncoder($user3)->encodePassword('pauline', $user3->getSalt()));
         $manager->persist($user3);
@@ -46,6 +52,8 @@ class UtilisateursData extends Fixture implements FixtureInterface
         $user4 = new Utilisateurs();
         $user4->setUsername('tiffany');
         $user4->setEmail('tiffany@gmail.com');
+        $user4->setValider('1');
+        $user4->setSolde(23);
         $user4->setEnabled(1);
         $user4->setPassword($this->container->get('security.encoder_factory')->getEncoder($user4)->encodePassword('tiffany', $user4->getSalt()));
         $manager->persist($user4);
@@ -53,6 +61,8 @@ class UtilisateursData extends Fixture implements FixtureInterface
         $user5 = new Utilisateurs();
         $user5->setUsername('dominique');
         $user5->setEmail('dominique@gmail.com');
+        $user5->setValider('1');
+        $user5->setSolde(4);
         $user5->setEnabled(1);
         $user5->setPassword($this->container->get('security.encoder_factory')->getEncoder($user5)->encodePassword('dominique', $user5->getSalt()));
         $manager->persist($user5);
@@ -68,6 +78,7 @@ class UtilisateursData extends Fixture implements FixtureInterface
         $this->addReference('user5',$user5);
 
     }
+
 
     public  function getOrder(){
         return 3;

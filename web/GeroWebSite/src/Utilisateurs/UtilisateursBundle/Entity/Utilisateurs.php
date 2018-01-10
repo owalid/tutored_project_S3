@@ -28,23 +28,57 @@ class Utilisateurs extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->setEnabled(0);
+        $this->valider = false;
+        $this->setSolde(0);
     }
 
     /**
-     * @ORM\OneToOne(targetEntity="GeroWebSite\GeroBundle\Entity\UtilisateursSolde", mappedBy="utilisateur", cascade={"remove"})
-     * @ORM\JoinColumn(nullable=true)
+     * @var float
+     *
+     * @ORM\Column(name="solde", type="float",nullable=false, options={"default":0})
      */
     private $solde;
 
     /**
-     * Set solde
+     * @var bool
      *
-     * @param \GeroWebSite\GeroBundle\Entity\UtilisateursSolde $solde
+     * @ORM\Column(name="valider", type="boolean",nullable=false, options={"default":false})
+     */
+    private $valider;
+    
+    /**
+     * Set valider
+     *
+     * @param boolean $valider
      *
      * @return Utilisateurs
      */
-    public function setSolde(\GeroWebSite\GeroBundle\Entity\UtilisateursSolde $solde = null)
+    public function setValider($valider)
+    {
+        $this->valider = $valider;
+
+        return $this;
+    }
+
+    /**
+     * Get valider
+     *
+     * @return boolean
+     */
+    public function getValider()
+    {
+        return $this->valider;
+    }
+
+    /**
+     * Set solde
+     *
+     * @param float $solde
+     *
+     * @return Utilisateurs
+     */
+    public function setSolde($solde)
     {
         $this->solde = $solde;
 
@@ -54,7 +88,7 @@ class Utilisateurs extends BaseUser
     /**
      * Get solde
      *
-     * @return \GeroWebSite\GeroBundle\Entity\UtilisateursSolde
+     * @return float
      */
     public function getSolde()
     {

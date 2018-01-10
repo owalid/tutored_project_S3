@@ -39,11 +39,10 @@
                                         </select>&nbsp;
                                         <a href="{{ path('supprimer', {'id' : produit.id}) }}"><i class="icon-trash"></i></a>
                                     </td>
-                                    {#<td>{{ produit.prix }}€</td>#}
-                                    {#<td>{{ produit.prix * Panier[produit.id] }}€ </td>#}
+                                    <td>{{ produit.prixUnitaire * Panier[produit.id] }}€ </td>
                                 </form>
                             </tr>
-                            {#{% set total= total + (produit.prix * Panier[produit.id]) %}#}
+                            {% set total= total + (produit.prixUnitaire * Panier[produit.id]) %}
                         {% endfor %}
                         </tbody>
                     </table>

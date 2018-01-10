@@ -42,7 +42,7 @@ class Course
     private $utilisateur;
 
     /**
-     * @ORM\ManyToOne(targetEntity="GeroWebSite\GeroBundle\Entity\Produit", cascade={"persist","remove"})
+     * @ORM\ManyToOne(targetEntity="GeroWebSite\GeroBundle\Entity\Produit", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $produit;

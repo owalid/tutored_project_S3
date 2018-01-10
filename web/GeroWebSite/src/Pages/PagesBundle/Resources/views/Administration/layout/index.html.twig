@@ -1,6 +1,9 @@
 {% extends '::layout/layoutAdmin.html.twig' %}
 
 {% block body %}
+<div class="container position-absolute" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
     <h1>Editer les pages</h1>
 
     <table class="table">
@@ -24,5 +27,9 @@
     </table>
 
             <a href="{{ path('adminPages_new') }}">Nouvelle page</a>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

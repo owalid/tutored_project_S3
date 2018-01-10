@@ -5,14 +5,15 @@
 
 
     Asfar ?
-   - carroussel => fichier js a inclure (home.hmtl.twig)
-   -faire style page adminproduit identique a page adminpages
+   -carroussel => fichier js a inclure (home.hmtl.twig)
+   -faire style page adminproduit identique a page adminpages et user Admin
 
 
 
 -Reste a finir:
 
     gestion des inscription benevole et enfant (partie admin)
+
     gestion des courses (partie benevole)
     gestion des distribution de gouter
 
@@ -21,4 +22,4 @@
 
     inclure les pages a propos et contact dans l'entite page
 
-    
+    Swift mailer envois de mail lors de l'inscription etc..

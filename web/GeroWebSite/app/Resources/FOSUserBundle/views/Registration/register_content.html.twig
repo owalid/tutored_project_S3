@@ -1,7 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 <div class="row">
     <div class="span12">
-        <h2 style="margin-bottom: 10%;">Inscription</h2>
+        <h2 style="margin-bottom: 3%;">Inscription</h2>
 
                 <div class="span4">
                     <h4>Pas encore inscrit ?</h4>
@@ -10,7 +10,7 @@
                         afin de passer votre commande de gouter.
                     </em>
                 </div>
-        <div class="span3 offset2">
+        <div class="span3 offset1">
             <h4>Inscription</h4>
 
             {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}

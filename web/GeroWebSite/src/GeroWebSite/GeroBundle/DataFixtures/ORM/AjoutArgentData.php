@@ -58,6 +58,6 @@ class AjoutArgentData extends Fixture
 
     public function getOrder()
     {
-        return 5;
+        return 4;
     }
 }

@@ -1,5 +1,8 @@
 {% extends '::layout/layoutAdmin.html.twig' %}
 {% block body %}
+<div class="container position-absolute" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
     <h1>Page creation</h1>
             <div class="span10">
                 {{ form_start(form) }}
@@ -14,4 +17,7 @@
             </li>
         </ul>
     </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

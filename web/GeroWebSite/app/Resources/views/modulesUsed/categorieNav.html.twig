@@ -1,25 +1,4 @@
-{% extends "::Layout/Layout.html.twig" %}
-{% block body %}
+
     {#TODO Refaire le style de la page#}
 
-        <div class="container">
-            <div class="row">
-
-                <div class="col-3">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="{{ path('produit') }}">Produits</a> </li>
-                        {{ render (controller('GeroBundle:Categorie:categorieNav')) }}
-                    </ul>
-                </div>
-            </div><br/>
-                {#formulaire de recherche des produits#}
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3">
-                             {{ render(controller("GeroBundle:Produits:recherche")) }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-{% endblock %}
+{#{% endblock %}#}

@@ -103,6 +103,6 @@ class ProduitData extends Fixture
     }
 
     public  function getOrder(){
-        return 6;
+        return 5;
     }
 }

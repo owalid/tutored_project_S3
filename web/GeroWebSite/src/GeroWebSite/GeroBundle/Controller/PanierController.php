@@ -32,11 +32,20 @@ class PanierController extends Controller
 
 
         $produits = $em->getRepository('GeroBundle:Produit')->findArray(array_keys($session->get('Panier')));
+        $user =  $soldeUtilisateur = $this->container->get('security.token_storage')->getToken()->getUser();
+        $sommePrix =0;
+        for ($i=0; $i< count($produits); $i++){
+            $sommePrix += $produits[$i]->getPrixUnitaire();
+        }
+        $user->setSolde($user->getSolde() - $sommePrix);
+        $em->persist($user);
+        $em->flush();
 
-        //livraison et facturation null ????
+        unset($produits);
+        $session->clear();
 
-        return $this->render('GeroBundle:Default:panier/layout/validation.html.twig',array('produits' => $produits,
-                                                                                                'Panier' => $session->get('Panier')));
+
+        return $this->render('GeroBundle:Default:panier/layout/validation.html.twig');
     }
 
     public function supprimerAction($id){
@@ -49,12 +58,10 @@ class PanierController extends Controller
             $session->set('Panier', $panier);
             $this->get('session')->getFlashBag()->add('success','Article supprimé avec succès');
         }
-
         return  $this->redirect($this->generateUrl('Panier'));
-
     }
 
-    public function  ajouterAction($id){
+    public function ajouterAction($id){
 
         $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
@@ -80,7 +87,7 @@ class PanierController extends Controller
         $session->set('Panier',$panier);
 
 
-        return  $this->redirect($this->generateUrl('Panier'));
+        return $this->redirect($this->generateUrl('Panier'));
     }
 
     public function panierAction()

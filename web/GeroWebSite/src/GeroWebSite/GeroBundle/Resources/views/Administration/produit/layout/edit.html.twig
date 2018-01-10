@@ -1,7 +1,11 @@
 {% extends '::layout/layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Produit edit</h1>
+<div class="container position-absolute" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
+
+    <h1>Produit</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -18,4 +22,7 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}

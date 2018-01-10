@@ -1,6 +1,9 @@
 {% extends '::layout/layoutAdmin.html.twig' %}
 
 {% block body %}
+<div class="container position-absolute" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
     <h1>Page edit</h1>
 <div class="span10">
     {{ form_start(edit_form) }}
@@ -18,5 +21,8 @@
 
             <a href="{{ path('adminPages_index') }}"><i class="icon-arrow-left"></i> Retour</a>
 
+</div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -34,7 +34,7 @@ class PagesData extends Fixture
     }
 
     public  function getOrder(){
-        return 9;
+        return 8;
     }
 }
 ?>

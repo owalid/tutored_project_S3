@@ -1,18 +1,35 @@
-<div class="span4">
-{% include '::modulesUsed/categorieNav.html.twig'%}
-</div>
-<div class="container position-relative" style="padding-bottom: 15%">
+{#{% include '::modulesUsed/categorieNav.html.twig'%}#}
+
+<div class="container">
     <div class="row">
-        <div class="span12">
+
+            <div class="col-12">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="{{ path('produit') }}">Produits</a> </li><br>
+                    {{ render (controller('GeroBundle:Categorie:categorieNav')) }}
+                    <div class="pull-right">
+                        {{ render(controller("GeroBundle:Produits:recherche")) }}
+                    </div>
+
+                </ul>
+            </div>
+     <br/>
+
+    </div>
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-12">
 
         {#TODO refaire le style de la page#}
         {#affichage des produits#}
         {% if produits|length != 0 %}
-            <ul class="thumbnail">
+            <ul class="">
                 {% for produit in produits %}
-                    <li class="span5 list-group-item">
+                    <li class="span4 list-group-item">
                             <img src="{{ produit.image.path }}" width="300" height="300">
-                        <div class="thumbnail">
+                        <div class="">
                                 <h4>{{ produit.nom }}</h4>
                                 <p>{{ produit.prixUnitaire}}€</p>
                                 <a class="btn btn-primary" href="{{ path('presentation', { 'id' : produit.id }) }}">Plus d'infos</a>
@@ -43,6 +60,10 @@
         Aucun produit
     {% endif %}
 </div>
+
+{% include "::Layout/Layout.html.twig" %}
+
+
 
 
 

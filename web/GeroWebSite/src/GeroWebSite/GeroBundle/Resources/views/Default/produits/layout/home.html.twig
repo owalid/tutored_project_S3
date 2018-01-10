@@ -18,33 +18,36 @@
                             </div>
                         </div>
                      </div>
-                <div class = "carousel slide" data-ride="carousel" id="carousel-example">
+                <div id = "MyCarousel" class="carousel slide" data-ride="carousel">
 
                     <ol class = "carousel-indicators">
-                        <li data-target = "#carousel-example" data-slide-to="0" claass = "active"></li>
+                        <li data-target = "#carousel-example" data-slide-to="0" class = "active"></li>
                         <li data-target = "#carousel-example" data-slide-to="1"></li>
                         <li data-target = "#carousel-example" data-slide-to="2"></li>
 
                     </ol>
 
                     {% for produit in produits %}
-                    <div class = "carousel-inner">
-                        <div class = "item active">
-                            <img src="{{ produit.image.path }}" width="300" height="300">
-                            <div class="carousel-caption">
-                                <h3>{{ produit.description}}</h3>
-                                <p>{{ produit.nom }}</p><br><br>
+                        <div class = "carousel-inner">
+                            <div class = "item active">
+                                <img src="{{ produit.image.path }}" width="300" height="300">
+                                <div class="carousel-caption">
+                                    <h3>{{ produit.description}}</h3>
+                                    <p>{{ produit.nom }}</p><br><br>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     {% endfor %}
 
-                        <a href="#carousel-example" class="left carousel-control" data-slide="prev">
-                            <span class = "icon-prev"></span>
-                        </a>
-                        <a href = "#carousel-example" class="right carousel-control" data-slide = "next">
-                            <span class = "icon-next"></span>
-                        </a>
+                    <a href="#MyCarousel" class="left carousel-control" data-slide="prev">
+                        <span class = "glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+
+                    </a>
+                    <a href = "#MyCarousel" class="right carousel-control" data-slide = "next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
 
 
                 </div>
