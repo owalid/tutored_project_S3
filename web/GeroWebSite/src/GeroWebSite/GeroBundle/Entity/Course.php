@@ -36,7 +36,7 @@ class Course
     private $dateCourse;
 
     /**
-     * @ORM\OneToOne(targetEntity="Utilisateurs\UtilisateursBundle\Entity\Utilisateurs", cascade={"persist","remove"})
+     * @ORM\OneToOne(targetEntity="Utilisateurs\UtilisateursBundle\Entity\Utilisateurs", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;

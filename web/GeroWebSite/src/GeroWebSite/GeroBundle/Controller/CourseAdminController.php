@@ -23,7 +23,7 @@ class CourseAdminController extends Controller
         $courses = $em->getRepository('GeroBundle:Course')->findAll();
 
         return $this->render('GeroBundle:Administration:course/layout/index.html.twig', array(
-            'courses' => $courses,
+                                        'courses' => $courses,
         ));
     }
 
@@ -59,7 +59,7 @@ class CourseAdminController extends Controller
     {
         $deleteForm = $this->createDeleteForm($course);
 
-        return $this->render('course/show.html.twig', array(
+        return $this->render('GeroBundle:Administration:course/layout/show.html.twig', array(
             'course' => $course,
             'delete_form' => $deleteForm->createView(),
         ));

@@ -1,4 +1,4 @@
-pages_adminPages:
+utilisateurs_admin:
     resource: "@UtilisateursBundle/Resources/config/routingAdmin.yml"
     prefix:   /admin/utilisateurs
 

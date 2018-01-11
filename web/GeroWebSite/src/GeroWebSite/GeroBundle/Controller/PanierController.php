@@ -33,6 +33,14 @@ class PanierController extends Controller
 
         $produits = $em->getRepository('GeroBundle:Produit')->findArray(array_keys($session->get('Panier')));
         $user =  $soldeUtilisateur = $this->container->get('security.token_storage')->getToken()->getUser();
+        $message = \Swift_Message::newInstance()
+            ->setSubject('Validation de la commande')
+            ->setFrom('geroiutorsay@gmail.com')
+            ->setTo('geroiutorsay@gmail.com')
+            ->setCharset('utf-8')
+            ->setContentType('text/html')
+            ->setBody($this->renderView('GeroBundle:Default:SwiftLayout/validationGouter.html.twig'));
+        $this->get('mailer')->send($message);
         $sommePrix =0;
         for ($i=0; $i< count($produits); $i++){
             $sommePrix += $produits[$i]->getPrixUnitaire();
@@ -40,6 +48,10 @@ class PanierController extends Controller
         $user->setSolde($user->getSolde() - $sommePrix);
         $em->persist($user);
         $em->flush();
+
+
+        //
+
 
         unset($produits);
         $session->clear();
@@ -64,6 +76,8 @@ class PanierController extends Controller
     public function ajouterAction($id){
 
         $request = $this->get('request_stack')->getCurrentRequest();
+        $quantite = $request->query->get('qte');
+
         $session = $request->getSession();
 
         if (!$session->has('Panier')) $session->set('Panier',array());
@@ -71,12 +85,13 @@ class PanierController extends Controller
 
         if (array_key_exists($id, $panier)) {
 
-            if ($request->query->get('qte') != null) $panier[$id] = $request->query->get('qte');
+            if ($request->query->get('qte') != null)  $panier[$id] = $request->query->get('qte');
 
             $this->get('session')->getFlashBag()->add('success','Quantité modifié avec succès');
         } else {
 
             if ($request->query->get('qte') != null)
+
                 $panier[$id] = $request->query->get('qte');
             else
                 $panier[$id] = '1';

@@ -1,7 +1,7 @@
 {% extends '::layout/layoutAdmin.html.twig' %}
 
 {% block body %}
-<div class="container position-absolute" style="right: -4%; top: 13%;">
+<div class="container" style="right: -4%; top: 13%;">
     <div class="row">
         <div class="col-12">
 
@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <th>Disponible</th>
-                <td>{% if produit.disponible %}Yes{% else %}No{% endif %}</td>
+                <td>{% if produit.disponible %}oui{% else %}Non{% endif %}</td>
             </tr>
             <tr>
                 <th>Prixunitaire</th>
@@ -38,10 +38,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('adminProduit_index') }}">Back to the list</a>
+            <a href="{{ path('adminProduit_index') }}">Retour</a>
         </li>
         <li>
-            <a href="{{ path('adminProduit_edit', { 'id': produit.id }) }}">Edit</a>
+            <a href="{{ path('adminProduit_edit', { 'id': produit.id }) }}">Editer</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -20,6 +20,8 @@
                         <h4>{{ produit.nom  }}</h4>
                         <h5>{{ produit.categorie.nomCategorie }}</h5>
                         <p>{{ produit.description }}</p>
+                         <p>{{ produit.prixUnitaire }} €</p>
+
                         {% if Panier[produit.id] is not defined %}
                             <form action="{{ path('ajouter', { 'id' : produit.id}) }}" method="get">
 

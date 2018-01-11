@@ -13,7 +13,9 @@ class CourseType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('montantCourse')->add('dateCourse')->add('utilisateur')->add('produit');
+        $builder->add('montantCourse')
+                ->add('dateCourse')
+                ->add('produit',ProduitType::class);
     }/**
      * {@inheritdoc}
      */

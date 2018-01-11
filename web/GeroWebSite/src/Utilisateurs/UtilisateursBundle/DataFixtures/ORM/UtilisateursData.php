@@ -19,14 +19,16 @@ class UtilisateursData extends Fixture implements FixtureInterface
     {
         $user1 = new Utilisateurs();
         $user1->setUsername('othmane');
-        $user1->setEmail('othmane@gmail.com');
+        $user1->setEmail('otayadi@gmail.com');
         $user1->setSolde(30.2);
         $user1->setValider('1');
         $user1->setEnabled('1');
+        $user1->setRoles(array('ROLE_BENEVOLE'));
         $encoder = $this->container->get('security.password_encoder');
         $password = $encoder->encodePassword($user1,'1234');
         $user1->setPassword($password);
         $manager->persist($user1);
+
 
         $user2 = new Utilisateurs();
         $user2->setUsername('client');
@@ -67,6 +69,19 @@ class UtilisateursData extends Fixture implements FixtureInterface
         $user5->setPassword($this->container->get('security.encoder_factory')->getEncoder($user5)->encodePassword('dominique', $user5->getSalt()));
         $manager->persist($user5);
 
+        $user6 = new Utilisateurs();
+        $user6->setUsername('root');
+        $user6->setEmail('root@gmail.com');
+        $user6->setSolde(10000);
+        $user6->setValider('1');
+        $user6->setEnabled('1');
+        $user6->setRoles(array('ROLE_ADMIN'));
+        $encoder = $this->container->get('security.password_encoder');
+        $password = $encoder->encodePassword($user6,'root');
+        $user6->setPassword($password);
+        $manager->persist($user6);
+
+
 
 
         $manager->flush();
@@ -76,6 +91,8 @@ class UtilisateursData extends Fixture implements FixtureInterface
         $this->addReference('user3',$user3);
         $this->addReference('user4',$user4);
         $this->addReference('user5',$user5);
+        $this->addReference('user6',$user6);
+
 
     }
 
